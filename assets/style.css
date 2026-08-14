@@ -18,7 +18,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 
 body {
   background: var(--bg);
@@ -489,4 +489,50 @@ footer {
   .plans { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
   section { padding: 64px 0; }
+}
+
+@media (max-width: 720px) {
+  body { font-size: 16px; }
+
+  .demo-bar { font-size: 12px; padding: 8px 14px; }
+
+  nav { padding: 18px 0; gap: 12px; }
+  .nav-logo { font-size: 16px; gap: 8px; min-width: 0; }
+  .nav-logo .star { width: 20px; height: 20px; }
+  nav .nav-logo .lockup-tail { display: none; }
+  /* index page: hide in-page anchor links, keep the CTA; back-links on other pages stay */
+  .nav-links { gap: 16px; }
+  .nav-links a[href^="#"]:not(.btn) { display: none; }
+  .nav-links a.btn { padding: 10px 18px; font-size: 13.5px; }
+
+  .hero { padding: 28px 0 56px; gap: 32px; }
+  .hero h1 { font-size: clamp(32px, 9.5vw, 42px); }
+  .hero .tagline { font-size: 19px; }
+  .hero p.sub { font-size: 15.5px; margin-bottom: 28px; }
+  .hero-ctas { flex-direction: column; }
+  .hero-ctas .btn { width: 100%; text-align: center; padding: 15px 24px; font-size: 16px; }
+
+  .marquee span { font-size: 15px; }
+
+  section { padding: 52px 0; }
+  .section-head { margin-bottom: 32px; }
+  .section-head h2 { font-size: clamp(27px, 7.5vw, 34px); }
+  .about-copy .big-quote { font-size: clamp(21px, 5.8vw, 26px); }
+
+  .work-grid h2 { font-size: clamp(27px, 7.5vw, 34px) !important; }
+  .card { padding: 28px 24px; }
+
+  .embed-frame { min-height: 300px; }
+  .gallery { gap: 10px; }
+
+  .social-btn { padding: 11px 18px; font-size: 14px; }
+
+  .contact-form { padding: 24px 20px; }
+
+  .pricing-hero { padding: 48px 0 24px; }
+  .plan { padding: 34px 24px; }
+  .plan .btn { padding: 14px 20px; font-size: 15px; }
+  .pricing-note { margin-top: 32px; }
+
+  .footer-grid { flex-direction: column; align-items: flex-start; gap: 20px; }
 }
